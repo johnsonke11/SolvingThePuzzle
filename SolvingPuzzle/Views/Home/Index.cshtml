@@ -1,0 +1,239 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@model SolvingPuzzle.Models.Email
+<style>
+    .jumbotron {
+        background-color: #6EC4D8; /* Orange */
+        color: #ffffff;
+         font-family: Montserrat, sans-serif;
+    }
+    .btn-danger{
+        background-color:#fa7c92;
+        border-color:#fa7c92
+    }
+body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+} 
+.container-fluid {
+    padding: 60px 50px;
+}
+.carousel {
+    padding: 60px 50px;
+}
+
+.logo-small {
+    color: #6EC4D8;
+    font-size: 50px;
+}
+h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.logo {
+    color: #6EC4D8;
+    font-size: 200px;
+}
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #6EC4D8;
+}
+
+.carousel-indicators li {
+    border-color: #6EC4D8;
+}
+
+.carousel-indicators li.active {
+    background-color: #6EC4D8;
+}
+
+.item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+}
+
+.item span {
+    font-style: normal;
+}
+
+footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #6EC4D8;
+}
+</style>
+
+<body id="SolvingPuzzleMain" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <div class="jumbotron text-center">
+        <h1>Solving the Puzzle</h1>
+        <p>Autism Social Skills Coaching</p>
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-inline" }))
+        {
+
+            <div class="input-group" style="max-width:400px;margin-left:auto; margin-right:auto;">
+
+                <div>@Html.ValidationMessageFor(Email => Email.email1, null, new { @class = "help-inline", style = "color:red" })</div>
+                @Html.TextAreaFor(Email => Email.email1, new { @class = "form-control", @placeholder = "Email Address", style = "width:300px;" })
+
+
+                <div class="input-group-btn">
+                    <button type="submit" class="btn btn-danger">Subscribe </button>
+
+                </div>
+
+            </div>
+        }
+        <p>@ViewBag.result </p>
+    </div>
+
+    <div class="container-fluid" id="about">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>About Me</h2>
+                <h4>It’s truly my greatest desire to help others find encouragement and fulfillment through a balance of healthy autism principles that will help inspire you and your family operate at its greatest capacity.</h4>
+                <p>Welcome to Solving the Puzzle! My name is Logan Barefoot, and I'm the founder of Solving the Puzzle, a place to find not only helpful and advantageous resources, but encouragement, inspiration, and motivation on your journey to better understand autism, and to learn more about embracing it’s unique components. At Solving the Puzzle, it is truly my greatest heart's desire to help others find encouragement and fulfillment through a balance of healthy principals and God's Word. I will teach you how to help you and your family unit operate amidst an autism spectrum disorder, and will help provide practical resources, lessons and encouragement to nourish both your body and soul.</p>
+                <p>I also share ideas and techniques from my personal experience of understanding autism and teach it in a way that is unique to YOU as an individual with autism, as a parent with a child with autism, a friend of someone with autism, or someone that just wants to know more. Solving the Puzzle is created to be a resource to inspire you to get emotionally healthy AND knowledgeable for life, all while enjoying the journey!</p>
+                <h4></h4>
+                <a href="#contact" class="btn btn-default">Contact Me</a>
+            </div>
+            <div class="col-sm-4">
+                <img src="~/Content/$RP3M6GH.jpg" class="img-circle" alt="Cinque Terre" width="269" height="332">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-center" id="services">
+        <h2>Services</h2>
+        <h4>What I offer</h4>
+        <br>
+        <div class="row">
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-map-marker logo-small"></span>
+                <p>Lives in Raleigh,NC, and offers services in a group, one-on-one, and virtual setting</p>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-heart logo-small"></span>
+                <p>Soon to be married to a crossfit gym owner who develops comprehensive training for individuals with Autism</p>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-certificate logo-small"></span>
+                <p>Recipient of "honorary scholar" by her graduate school for her 4.0 GPA and involvement on campus</p>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-star-empty logo-small" aria-hidden="true"></span>
+                <p>Recieved a scholarship from UCLA's Nueroscience department to recieve the PEERS-autism social skill training certification</p>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-education logo-small"></span>
+                <p>Masters of Science degree in Child Development and Autism Spectrum Disorders</p>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-comment logo-small"></span>
+                <p>She beleives that "If they cant learn the we teach them, then we teach them the way they learn"</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-center bg-grey" id="program" >
+        <h2>What you’ll find on Solving the Puzzle  </h2>
+        <div class="row">
+            <div class="col-sm-4">
+                <h4>Social Skill tutoring</h4>
+                <p>Solving the Puzzle tutoring sessions are different than other “tutoring sessions”. Every lesson is based off the PEERS program- a research proven intervention to teach individuals with autism how to make and keep friends! These lessons consist of a 90-minute lesson, and include individualized activities and behavioral rehearsals that best fit the learning style of the individual.</p>
+            </div>
+            <div class="col-sm-4">
+                <h4>Workouts</h4>
+                <p>In addition to providing tailored social skill lessons, I also hope this website will bring practical knowledge on how to live a physically fit and healthy lifestyle, which is where Autism Athletes come in! Solving the puzzle offers individualized training programs, which features a variety of workouts that can be performed by people of ever fitness level, and strikes a balance between at home and gym workouts.</p>
+            </div>
+            <div class="col-sm-4">
+                <h4>Resources</h4>
+                <p>The resources listed on this site have been inspired by both personal journey, and successful resources for other clients.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="myCarousel" class="carousel slide text-center" data-ride="carousel" >
+        <h2>Testimonials</h2>
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <h4>"This company is the best. I am so happy with the result!"<br><span style="font-style:normal;">Michael Roe, Vice President, Comment Box</span></h4>
+            </div>
+            <div class="item">
+                <h4>"One word... WOW!!"<br><span style="font-style:normal;">John Doe, Salesman, Rep Inc</span></h4>
+            </div>
+            <div class="item">
+                <h4>"Could I... BE any more happy with this company?"<br><span style="font-style:normal;">Chandler Bing, Actor, FriendsAlot</span></h4>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <div class="container-fluid bg-grey" id="contact">
+        <h2 class="text-center">CONTACT</h2>
+        <div class="row">
+            <div class="col-sm-8">
+                <p>Contact me!</p>
+                <p><span class="glyphicon glyphicon-map-marker"></span> Raleigh, US</p>
+                <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+                <p><span class="glyphicon glyphicon-envelope"></span> logonbarefoot@solvingthepuzzle.com</p>
+                <p><a href=""><img src="~/Content/instagram-128.png" /></a>My Instagram</p>
+                <p><a href="https://www.linkedin.com/in/loganbarefoot"><img src="~/Content/linkedin-128.png" /></a>My LinkedIn</p>
+            </div>
+            <div class="col-sm-4">
+            <img src="~/Content/puzzle-ribbon.png" alt="Autism Ribbon" />
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="donate">
+        <h2 class="text-center"> DONATE </h2>
+        <div class="row">
+            <div class="col-sm-6">
+                <p>
+                    I am currrently accepting donations to my project of creating an Autism Center here in Raleigh
+                    Thank you for your generous contributions.
+                </p>
+            </div>
+            <div class="col-sm-6">
+                <a href="" class="btn btn-default">Donate Here</a>
+            </div>     
+        </div>
+    </div>
+</body>
+<footer class="container-fluid text-center">
+    <a href="#SolvingPuzzleMain" title="To Top">
+        <span class="glyphicon glyphicon-chevron-up"></span></a>
+    <p>Copyright Logan Barefoot 2016 </p>
+</footer>
